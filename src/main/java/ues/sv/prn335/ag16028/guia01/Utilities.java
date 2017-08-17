@@ -1,7 +1,11 @@
 package ues.sv.prn335.ag16028.guia01;
 
 public class Utilities {
-    
+    /**
+     * 
+     * @param texto
+     * @return 
+     */
     public String getResume(String texto){
         String cadena="";
       if(texto.length()<30){
@@ -14,8 +18,12 @@ public class Utilities {
         return cadena;
     }
      
-    
-    public String catalizar(String texto){
+    /**
+     * 
+     * @param texto
+     * @return 
+     */
+    public String capitalizar(String texto){
         String cadena="",caracter,mayus;
         if(!texto.equals("")){
             for(int i=0;i<texto.length();i++){
@@ -42,6 +50,26 @@ public class Utilities {
         return cadena;
     }
    
-    
+    /**
+     * 
+     * @param frase
+     * @param texto
+     * @return 
+     */
+        public int contarcoincidencias(String frase,String texto){
+        int cantidad=0,t=0;
+       String coincidencia;
+        for(int i=frase.length();i<=texto.length();i++,t++){  
+            coincidencia="";
+            for(int j=0+t;j<frase.length()+t;j++){
+               coincidencia+=String.valueOf(texto.charAt(j));
+            }
+            if(frase.equalsIgnoreCase(coincidencia)){
+                cantidad++;
+            } 
+        }
+        return cantidad;
+        
+    }
     
 }
