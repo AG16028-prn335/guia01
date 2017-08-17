@@ -13,7 +13,9 @@ public class Utilities {
       }
         return cadena;
     }
-     public String cataliza(String texto){
+     
+    
+    public String catalizar(String texto){
         String cadena="",caracter,mayus;
         if(!texto.equals("")){
             for(int i=0;i<texto.length();i++){
@@ -21,16 +23,19 @@ public class Utilities {
                 if(i>0){
                     if(caracter.equals(" ")){
                         if(caracter.equals(String.valueOf(texto.charAt(i-1)))){                                
-                        }else{
-                            mayus=String.valueOf(texto.charAt(i)); 
-                            mayus.toUpperCase();
-                            cadena+=mayus;
+                        }else{   
+                          cadena+=texto.charAt(i);
                         }  
+                        
                     }else{
-                         cadena+=texto.charAt(i);
+                           if (String.valueOf(texto.charAt(i-1)).equals(" ")){
+                              cadena+=String.valueOf(texto.charAt(i)).toUpperCase(); 
+                           }else{
+                               cadena+=texto.charAt(i);
+                           }
                     }
                 }else{
-                    cadena+=texto.charAt(i);
+                    cadena+=String.valueOf(texto.charAt(i)).toUpperCase();
                 }
             }    
         }  
